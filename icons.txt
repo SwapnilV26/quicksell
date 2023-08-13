@@ -1,0 +1,7 @@
+priority:
+BsExclamationSquareFill
+BsThreeDots
+MdOutlineSignalCellularAlt1Bar
+MdOutlineSignalCellularAlt2Bar
+MdOutlineSignalCellularAlt
+IoMdAdd
