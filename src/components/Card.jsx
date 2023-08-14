@@ -38,11 +38,11 @@ const Card = ({ data }) => {
         }
 
       </div>
-      <div className='flex items-center gap-2'>
-        {group !== 'status' && getStatusIcon(data?.status)}
-        <h3 className='text-lg font-bold tracking-tight text-gray-900 mb-2 h-14 overflow-hidden'>{data?.title}</h3>
+      <div className='flex gap-2'>
+        <div className='mt-2'>{group !== 'status' && getStatusIcon(data?.status)}</div>
+        <h3 className='font-bold tracking-tight text-gray-900 line-clamp-2 mb-2 h-12 overflow-hidden'>{data?.title}</h3>
       </div>
-      <div className='flex gap-1'>
+      <div className='flex items-center gap-1'>
         {group !== 'priority' && getPriorityIcon(data?.priority)}
         <div className='border text-sm px-1 border-gray-200 flex gap-1 items-center rounded'>
           <BiSolidCircle className='text-gray-300' />
