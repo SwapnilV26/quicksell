@@ -9,7 +9,7 @@ const Layout = () => {
         <div className='mx-10 pt-5'>
             {
                 group === "status" &&
-                <div className='flex gap-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:flex gap-7'>
                     {status && status.map((item) => {
                         return <Board key={item.id} factor={item.name} name={item.name} />
                     })}
@@ -17,7 +17,7 @@ const Layout = () => {
             }
             {
                 group === "priority" &&
-                <div className='flex gap-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:flex gap-7'>
                     {priority && priority.map((item) => {
                         return <Board key={item.id} factor={item.id} name={item.name} />
                     })}
@@ -25,9 +25,9 @@ const Layout = () => {
             }
             {
                 group === "user" &&
-                <div className='flex gap-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:flex gap-7'>
                     {users && users.map((item) => {
-                        return <Board key={item.id} factor={item.id} name={item.name} />
+                        return <Board key={item.id} factor={item.id} name={item.name} available={item.available} />
                     })}
                 </div>
             }
