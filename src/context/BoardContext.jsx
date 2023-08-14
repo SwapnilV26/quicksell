@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const BoardContext = createContext();
 
 export const BoardContextProvider = ({ children }) => {
+
     const status = [
         { name: "Backlog" }, 
         { name: "Todo" }, 
@@ -11,6 +12,17 @@ export const BoardContextProvider = ({ children }) => {
         { name: "Done" }, 
         { name: "Canceled" }, 
     ]
+
+    const priority = [
+        { id: 0, name: "No priority" }, 
+        { id: 4, name: "Urgent" }, 
+        { id: 3, name: "High" }, 
+        { id: 2, name: "Medium" }, 
+        { id: 1, name: "Low" },     
+    ]
+    
+    const [group, setGroup] = useState("status");
+    const [order, setOrder] = useState("priority");
 
     const [tickets, setTickets] = useState([]);
     const [users, setUsers] = useState([]);
@@ -28,8 +40,9 @@ export const BoardContextProvider = ({ children }) => {
         fetchData();
     }, [baseURL])
 
+
     return (
-        <BoardContext.Provider value={ {tickets, users, status} }>
+        <BoardContext.Provider value={{ tickets, users, status, priority, group, setGroup, order, setOrder }}>
             {children}
         </BoardContext.Provider>
     );
